@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curly hair</title>
+
+<style>
+    /* ===== MENU FIXO NO TOPO ===== */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fce1f5;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(255, 139, 197, 0.603); /* sombra elegante */
+}
+
+/* container interno do menu */
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: /*tamanho do container*/ 40px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo cor */
+.logo {
+    color: rgb(235, 113, 174);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* lista do menu */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+/* links */
+.menu a {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+/* linha animada embaixo */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* hover */
+.menu a:hover::after {
+    width: 100%;
+}
+
+html { scroll-behavior: smooth; }
+/*fim do cabeçalho
+
+
+
+
+/* PRODUTOS */
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.produto{
+    background:rgb(255, 255, 255);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgb(0, 0, 0);
+    text-align:center;
+}
+
+.produto h3{
+    margin:15px 0 10px;
+}
+
+.preco{
+    color:#27ae60;
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.botao{
+    display:inline-block;
+    padding:10px 20px;
+    background:black;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    border-radius:5px;
+}
+
+
+
+
+
+/* MENU FIXO */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fce1f5;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+
+/* Container interno */
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+
+/* Logo nome da loja */
+.logo {
+    color: rgb(235, 113, 174);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+
+/* Links do menu */
+.menu-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-links a {
+    position: relative;
+    color: rgb(0,0,0);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.menu-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.menu-links a:hover::after {
+    width: 100%;
+}
+
+
+
+
+/* Barra de pesquisa */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+#barraPesquisa {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 180px;
+    transition: 0.3s;
+}
+
+#barraPesquisa:focus {
+    width: 220px;
+    border-color: rgb(235,113,174);
+    box-shadow: 0 0 8px rgba(235,113,174,0.4);
+}
+
+
+
+
+/* Responsividade adaptar para telas menores*/
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .menu-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #barraPesquisa {
+        width: 100%;
+    }
+}
+
+
+
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 120px auto; /* ajusta abaixo do menu fixo */
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.slide p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+/* Botões do carrossel*/
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 145, 246, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+/* ================= FOOTER final ================= */
+.footer {
+  background: #fbc9ff;
+  color: #ff53bd;
+  padding: 60px 0 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #000000;
+  font-size: 14px;
+}
+
+/* NEWSLETTER */
+.newsletter-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* REDES SOCIAIS */
+.footer-social a img {
+  width: 28px;
+  margin-right: 10px;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ffc4f2;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #000000;
+}
+</style>
+
+
+
+<script>
+function pesquisar(event) {
+    event.preventDefault();
+
+    let input = document.getElementById("barraPesquisa").value.toLowerCase().trim();
+
+    /* 🔀 REDIRECIONA APENAS PARA CORTES */
+    if (
+        input.includes("corte") ||
+        input.includes("cortes") ||
+        input.includes("corte de cabelo") ||
+        input.includes("cortes de cabelo")
+    ) {
+        window.location.href = "cortes.html";
+        return false;
+    }
+
+    /* 🔎 FILTRO NORMAL */
+    let produtos = document.querySelectorAll(".produto");
+    let encontrou = false;
+
+    produtos.forEach(function(produto) {
+        let texto = produto.innerText.toLowerCase();
+
+        if (texto.includes(input)) {
+            produto.style.display = "block";
+            encontrou = true;
+        } else {
+            produto.style.display = "none";
+        }
+    });
+
+    if (!encontrou) {
+        alert("Nenhum resultado encontrado.");
+    }
+
+    return false;
+}
+
+
+let slideAtual = 0;
+
+function mudarSlide(direcao) {
+    const container = document.getElementById("carouselContainer");
+    const slides = document.querySelectorAll(".slide");
+
+    slideAtual += direcao;
+
+    if (slideAtual < 0) slideAtual = slides.length - 1;
+    if (slideAtual >= slides.length) slideAtual = 0;
+
+    container.style.transform = `translateX(-${slideAtual * 100}%)`;
+}
+
+</script>
+</head>
+
+
+<body>
+    
+
+<!-- cabeçalho -->
+<nav class="menu">
+    <div class="menu-container">
+        <!-- LOGO -->
+        <div class="logo">𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓</div>
+
+        <!-- MENU -->
+        <ul class="menu-links">
+            <li><a href="#Tipos de Cabelo">Tipos de Cabelo</a></li>
+            <li><a href="#Top 5 Marcas no Brasil">Marcas</a></li>
+            <li><a href="#Influênciadores">Influenciadores</a></li>
+            <li><a href="#Importância">Importância dos cuidados</a></li>
+        </ul>
+
+        <!-- BARRA DE PESQUISA -->
+        <form onsubmit="return pesquisar(event)" class="search-form">
+            <input type="text" id="barraPesquisa" placeholder="Pesquisar...">
+        </form>
+    </div>
+</nav>
+
+<!--imagem de inicio-->
+<img src="WhatsApp Image 2026-02-23 at 22.08.12.jpeg" width="1900" height="520">
+
+<!--tipos de cabelo inicio -->
+<section class="categoria" id="Tipos de Cabelo"></section>
+<h1 style="color: rgb(0, 0, 0);font-size: 35px;"> 
+    <h1 style="text-align: center;"> Tipos de Cabelo </h1> 
+</h1>
+
+
+
+
+<!--deixa as sessoes lado a lado-->
+<div class="produtos">
+<div class="carousel">
+
+    <button class="prev" onclick="mudarSlide(-1)">❮</button>
+
+    <div class="carousel-container" id="carouselContainer">
+
+        <div class="slide">
+            <img src="https://res.cloudinary.com/beleza-na-web/image/upload/f_auto,fl_progressive,q_auto:eco/blog/wordpress/prod/sites/7/2024/03/06203238/AdobeStock_498469673-1.jpg">
+            <h1>Cabelo 3A</h1>
+            <h2>Os cachos são mais soltos e podem variar em forma, com algumas partes mais cacheadas e outras mais lisas.<br>
+            A formação de cachos ocorre de maneira irregular, com raízes que podem ser lisas ou onduladas. <br>
+            Apesar de ser cacheado, o cabelo 3A tende a ter um volume moderado e pode apresentar uma leveza que proporciona um movimento natural.</h2>
+        </div>
+
+        <div class="slide">
+            <img src="https://i.pinimg.com/originals/83/05/53/8305531bd14fc87efffa51f8ce058717.jpg">
+            <h1>Cabelo 3B</h1>
+            <h2>O cabelo 3B apresenta cachos mais fechados que o 3A, mas mais soltos que o 3C, geralmente com a largura de um marcador ou do dedo <br> indicador.
+            Os cachos são bem definidos, elásticos e volumosos, formando espirais da raiz às pontas. <br>
+            A raiz tende a ser um pouco mais lisa, enquanto o comprimento mantém a curvatura em espiral.</h2>
+        </div>
+
+        <div class="slide">
+            <img src="https://i.pinimg.com/originals/c7/09/5b/c7095bae75fcc889c5357fe8f4cd0785.jpg">
+            <h1>Cabelo 3C</h1>
+            <h2>O cabelo 3C é caracterizado por cachos bem definidos, textura mais grossa e tendência ao ressecamento, exigindo cuidados <br>específicos para manter a saúde e a definição dos fios. 
+            Apresenta cachos pequenos e bem definidos que começam a se formar <br> desde a raiz, mais apertados em comparação com os tipos 3A e 3B.</h2>
+        </div>
+ 
+        <div class="slide">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.blD11Z2xt3R-UCSNnWc_KAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <h1>Cabelo 4A</h1>
+            <h2>Cachos pequenos e bem definidos, com curvatura de espiral mais fechada, formando cachos que se assemelham a uma <br> letra "S". 
+            O fator encolhimento tende a dar a impressão de que os fios não estão crescendo tão rapidamente. <br>
+            Este tipo de cabelo é mais frágil e pode ser mais ressecado, requerendo atenção e hidratação redobrada.</h2>
+        </div>
+
+        <div class="slide">
+            <img src="https://i.pinimg.com/originals/54/3f/3b/543f3b180e7daae219b0d6fbe20fb07f.jpg">
+            <h1>Cabelo 4B</h1>
+            <h2>O cabelo 4B é caracterizado por cachos muito definidos e apertados, formando um zigue-zague quando <br> esticado.
+            Tem uma textura única que cria um padrão em "Z", diferente do padrão em "S" de outros tipos de <br>cabelos cacheados.</h2>
+        </div>
+
+        <div class="slide">
+            <img src="https://www.cabeloafro.com.br/wp-content/uploads/2018/05/cabelo-4c-d-lovensky-555422-unsplash-2648696-8485341.jpg">
+            <h1>Cabelo 4C</h1>
+            <h2>Curvatura em "Z": os fios são densamente compactados e não apresentam definição natural, o que <br>pode levar ao encolhimento. 
+            Geralmente, o cabelo 4C é mais seco devido à dificuldade da oleosidade natural em <br>alcançar as extremidades dos fios.</h2>
+        </div>
+
+    </div>
+
+    <button class="next" onclick="mudarSlide(1)">❯</button>
+
+</div> </div> 
+
+<!--comercial-->
+<a href="https://www.salonline.com.br/outlet"> <img src="comercial.jpg" width="1900" height="200"> </a>
+
+<!--marcas-->
+<section class="categoria" id="Top 5 Marcas no Brasil"></section>
+<h1 style="color: rgb(0, 0, 0);font-size: 35px;"> 
+     <p style="margin: 40px; padding: 60px;"> <h1 style="text-align: center;"> Top 5 Marcas no Brasil </h1> </p>
+</h1>
+
+
+<div class="produto"> 
+<img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/product/MP66982/1efd1bf4-9e7d-4e6b-b965-98a5a6121b8f-61964a41fc02a13832d0ec63-13868772433627518492.jpg" 
+    width="250" height="250" align="left">
+<h2> A Widi Care é considerada a número um para cabelos cacheados no Brasil porque desenvolve fórmulas pensadas 
+            especificamente para fios  ondulados, cacheados e crespos, e não apenas adapta produtos genéricos para esse público. <br>
+             Seus produtos costumam oferecer alta hidratação, boa definição e controle de frizz sem pesar nos fios,   algo essencial 
+             para quem busca cachos mais soltos, brilhantes e duradouros. <br>
+             Além disso, a marca conquistou forte reputação entre consumidores e profissionais por entregar resultados visíveis 
+             já nas primeiras aplicações, principalmente em linhas como a “Juba”, muito elogiada pela definição e maciez que proporciona. <br>
+             Outro fator importante é a variedade do portfólio, que permite  montar uma rotina completa — da lavagem à finalização — mantendo 
+             o mesmo padrão de qualidade. Essa combinação de especialização em cachos, desempenho consistente e alta aprovação do público é 
+             o que coloca a Widi Care no topo das preferidas para quem tem cabelo cacheado no Brasil. </h2> 
+ 
+                        <a href="https://widicare.com.br/" target="_blank"> <div style="background-color: rgb(255, 241, 254);color: rgb(255, 0, 140); padding: 15px;width: 1800px; text-align: center;"> 
+  saiba mais </a>
+</div>
+  
+            </div> 
+
+             
+ <p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/product/78750/77d78cb6-00f9-46ca-896f-e219e257375a-kit-salon-line-sos-bomba-original-full-4-produtos.png" 
+    width="250" height="250" align="left">
+<h2> A Salon Line é uma das marcas mais conhecidas de cosméticos para cabelos no Brasil, especialmente famosa por atender às necessidades de cabelos cacheados,
+     ondulados e crespos.<br> Fundada com foco em diversidade e inclusão, a marca se destacou por desenvolver linhas completas que vão desde shampoo, condicionador,
+      máscaras de tratamento até finalizadores, todos voltados para hidratação, definição dos cachos e controle do frizz. <br> Um dos grandes diferenciais da Salon Line
+       é a variedade de produtos específicos para cada tipo de cacho e também o investimento em inovação e comunicação próxima com o público jovem, usando redes sociais 
+       para educar e engajar sobre cuidados capilares. <br> Por isso, ela conquistou grande popularidade entre consumidores que buscam produtos acessíveis, eficazes e voltados
+        para cabelos cacheados e crespos.</h2> 
+
+                        <a href="https://www.salonline.com.br/" target="_blank"> <div style="background-color: rgb(255, 241, 254);color: rgb(255, 0, 140); padding: 15px;width: 1800px; text-align: center;">
+  saiba mais </a>
+</div>
+  
+            </div> 
+
+
+<p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/product/KT002191/fbd68eef-2816-4fdc-9ef0-333079e66941-kit-lola-cosmetics-danos-vorazes-tree-3-produtos.png" 
+    width="250" height="250" align="left">
+<h2> A Lola Cosmetics é uma marca brasileira de cosméticos capilares conhecida por unir fórmulas eficazes com uma proposta criativa, divertida e consciente.
+     Nascida no Rio de Janeiro e com forte presença no mercado de cuidados dos cabelos, a Lola se distingue por desenvolver produtos vegano, cruelty-free e 
+     sem sulfatos ou parabenos, o que a torna atraente para quem busca resultados sem ingredientes agressivos aos fios ou ao meio ambiente.
+A marca celebra a diversidade dos tipos de cabelo com linhas variadas que atendem desde ondas e cachos até cabelos crespos e quimicamente 
+tratados, oferecendo shampoos, máscaras, condicionadores e finalizadores com ingredientes naturais — como óleos vegetais e extratos botânicos — 
+que ajudam a hidratar, nutrir e definir os fios, além de controlar o frizz.</h2> 
+
+                        <a href="https://www.lolacosmetics.com.br/" target="_blank"> <div style="background-color: rgb(255, 241, 254);color: rgb(255, 0, 140); padding: 15px;width: 1800px; text-align: center;">
+  saiba mais </a>
+</div>
+  
+            </div> 
+
+
+<p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://tse2.mm.bing.net/th/id/OIP.RxXtsIPXVh2y0meHCTYsjgHaHa?w=800&h=800&rs=1&pid=ImgDetMain&o=7&rm=3" 
+    width="250" height="250" align="left">
+<h2> A Skala Cosméticos é uma marca brasileira bastante popular no segmento de cuidados capilares, conhecida
+     principalmente pelo ótimo custo-benefício e pelas fórmulas acessíveis voltadas para diferentes tipos de cabelo, 
+     especialmente os cacheados e crespos. A marca ganhou ainda mais destaque com a linha Mais Cachos, que oferece cremes
+      de tratamento, shampoos, condicionadores e finalizadores focados em hidratação, definição e controle do frizz. Um dos grandes diferenciais da Skala
+       é apostar em produtos veganos, livres de ingredientes de origem animal e, em muitas linhas, sem sulfatos, parabenos, petrolatos e silicones pesados, 
+       o que agrada quem segue rotinas como low poo ou no poo. Além disso, suas embalagens costumam ter grande quantidade de produto por um preço acessível, 
+       tornando-se uma opção muito presente em mercados e farmácias de todo o Brasil.</h2> 
+
+                        <a href="https://www.skala.com.br/" target="_blank"> <div style="background-color: rgb(255, 241, 254);color: rgb(255, 0, 140); padding: 15px;width: 1800px; text-align: center;">
+  saiba mais </a>
+</div>
+  
+            </div> 
+
+            
+
+<p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://acdn.mitiendanube.com/stores/001/154/387/products/kit-supermascaras-11-1f42afe6dc181bcc3f16855620741360-1024-1024.jpg" 
+width="250" height="250" align="left">
+<h2> A Haskell Cosméticos é uma marca brasileira tradicional no segmento de cuidados capilares que se consolidou por desenvolver produtos
+     com foco em ingredientes naturais, fórmulas veganas e soluções pensadas para diferentes necessidades de cabelo, incluindo cachos e crespos.
+      Em especial, a linha Se Curve foi criada para valorizar e cuidar de cabelos ondulados, cacheados e crespos com fórmulas que buscam hidratação
+       profunda, nutrição, definição e controle do frizz, sempre respeitando a curvatura dos fios e promovendo saúde e brilho aos cabelos.Os produtos 
+       da Haskell costumam ser livre de parabenos e corantes, muitos com pH balanceado e compatíveis com técnicas como low poo, o que atrai quem busca 
+       manter a estrutura natural dos cachos sem agredir os fios.</h2> 
+
+                        <a href="https://haskellcosmeticos.com.br/" target="_blank"> <div style="background-color: rgb(255, 241, 254);color: rgb(255, 0, 140); padding: 15px;width: 1800px; text-align: center;">
+  saiba mais </a>
+</div>
+  
+            </div> 
+
+<!--comercial-->
+<p style="margin: 40px; padding: 50px;"> </p><a href="https://www.salonline.com.br/outlet"> <img src="comercial.jpg" width="1900" height="200"> </a>
+
+<!--influences-->
+            <section class="categoria" id="Influênciadores"></section>
+<h1 style="color: rgb(0, 0, 0);font-size: 35px;"> 
+    <p style="margin: 40px; padding: 50px;"> <h1 style="text-align: center;"> Influênciadores </h1> 
+</h1> 
+
+<h1 style="color: rgb(0, 0, 0);font-size: 35px;"> <h2 style="text-align: center;"> Clique nos videos para serem rederecionados para o perfil do influêncer sobre cada cabelo </h2> </h1> 
+
+
+<!--videos de influencer-->
+<A href="https://www.tiktok.com/@gabrielabarim?_r=1&_t=ZS-94NyVaIAVV2"> <video src="video1.mp4" width="310" height="550" controls autoplay loop muted > </video> </A>
+
+<A href="https://www.tiktok.com/@paolalollaaa?_r=1&_t=ZS-94NynseNGQj"> <video src="video2.mp4" width="310" height="550" controls autoplay loop muted > </video> </A>
+
+<A href="https://www.tiktok.com/@sarahalvx?_r=1&_t=ZS-94NybmR8qdF"> <video src="video3.mp4" width="310" height="550" controls autoplay loop muted > </video> </A>
+
+<A href="https://www.tiktok.com/@juvlogando?_r=1&_t=ZS-94NyZpOcu5x"> <video src="video 4.mp4" width="310" height="550" controls autoplay loop muted > </video> </A>
+
+<A href="https://www.tiktok.com/@_dos_reiss?_r=1&_t=ZS-94NyeW4jAbQ"> <video src="video5.mp4" width="310" height="550" controls autoplay loop muted > </video> </A>
+
+<A href="https://www.tiktok.com/@kamillaalbino?_r=1&_t=ZS-94NyfT0Tv9t"> <video src="video6.mp4" width="310" height="550" controls autoplay loop muted > </video> </A>
+
+<!--comercial-->
+<p style="margin: 40px; padding: 50px;"> </p><a href="https://www.salonline.com.br/outlet"> <img src="comercial.jpg" width="1900" height="200"> </a>
+
+<!--final-->
+    <section class="categoria" id="Importância"></section>
+<h1 style="color: rgb(0, 0, 0);font-size: 35px;"> 
+    <p style="margin: 40px; padding: 50px;"> <h1 style="text-align: center;"> Importância dos cuidados </h1> 
+</h1> 
+
+   <h1 style="text-align: center;">  <video src="WhatsApp Video 2026-03-03 at 16.02.41.mp4" width="500" height="510" controls muted> </video> </h1> </p>
+
+<h2>ㅤㅤCuidar do cabelo vai muito além de um aspecto estético: ele está diretamente ligado à saúde dos fios, do couro cabeludo e,
+     principalmente, à autoestima de cada pessoa. Um cabelo saudável indica que o corpo está bem nutrido e que há atenção aos 
+     cuidados diários, como lavagem adequada, hidratação, uso de produtos compatíveis com o tipo de fio e proteção contra fatores 
+     externos, como sol, poluição e excesso de calor.
+Além dos cuidados físicos, o cabelo exerce um papel importante na forma como nos percebemos e nos apresentamos ao mundo.
+ Ele pode refletir personalidade, estilo e humor, influenciando significativamente a confiança e a segurança de cada um.
+ Problemas como ressecamento, quebra, queda ou aparência opaca podem impactar emocionalmente, causando insegurança e afetando a autoestima.
+Investir tempo e atenção na saúde capilar, portanto, não é apenas uma questão de vaidade: é uma forma de autocuidado que 
+promove bem-estar, confiança e uma sensação de valorização pessoal. Pequenas atitudes, como escolher produtos adequados, 
+evitar processos agressivos e manter uma alimentação equilibrada, fazem toda a diferença, permitindo que o cabelo seja não 
+apenas bonito, mas também um reflexo de saúde e autoconfiança.</h2>
+
+
+<!-- FOOTER final -->
+ <p style="margin: 40px; padding: 10px;"></p>
+<footer class="footer">
+  <div class="container footer-container">
+
+    <div class="footer-col">
+      <h2 class="footer-logo">𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓</h2>
+      <h3>Cuidando de você desde sempre.</h3>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Assine nossa newsletter</h3>
+      <p>Receba novidades exclusivas diretamente no seu e-mail.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Digite seu e-mail" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <div class="footer-col">
+      <h3>Siga o 𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓</h3>
+      <div class="footer-social">
+  <a href="https://www.instagram.com/curlyhairsenac/" target="_blank"><img src="https://www.freepnglogos.com/uploads/instagram-logo-png/white-instagram-logo-black-and-white-icon--14.png" alt="Instagram"></a>
+  <a href="https://www.facebook.com" target="_blank"><img src="https://tse3.mm.bing.net/th/id/OIP.MuwDvybtb_PqVOGREGIjegHaHb?w=482&h=484&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Facebook"></a>
+  <a href="https://twitter.com" target="_blank"><img src="https://tse4.mm.bing.net/th/id/OIP._j_CS9V2HOZOf4P9vqD4GgHaHa?w=500&h=500&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Twitter"></a>
+</div>
+    </div>
+
+  </div>
+
+  <div class="footer-copy">
+    <p>© 2026 𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
