@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cortes</title>
+
+<style>
+
+/* ===== MENU ===== */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fce1f5;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: rgb(235, 113, 174);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* ===== ESPAÇO DO SITE ===== */
+.conteudo{
+    margin-top:120px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:20px;
+}
+
+
+
+/* ===== BOTÃO DE ABRIR TEXTO ===== */
+details{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+summary{
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+
+/* Barra de pesquisa */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+#barraPesquisa {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 180px;
+    transition: 0.3s;
+}
+
+#barraPesquisa:focus {
+    width: 220px;
+    border-color: rgb(235,113,174);
+    box-shadow: 0 0 8px rgba(235,113,174,0.4);
+}
+
+
+
+
+
+/* PRODUTOS */
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.produto{
+    background:rgb(255, 255, 255);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgb(0, 0, 0);
+    text-align:center;
+}
+
+.produto h3{
+    margin:15px 0 10px;
+}
+
+.preco{
+    color:#27ae60;
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.botao{
+    display:inline-block;
+    padding:10px 20px;
+    background:black;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    border-radius:5px;
+}
+
+
+
+
+
+
+/* ================= FOOTER parte final ================= */
+.footer {
+  background: #fbc9ff;
+  color: #ff53bd;
+  padding: 60px 0 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #000000;
+  font-size: 14px;
+}
+
+/* NEWSLETTER */
+.newsletter-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* REDES SOCIAIS */
+.footer-social a img {
+  width: 28px;
+  margin-right: 10px;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ffc4f2;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #000000;
+}
+
+
+.logo-link{
+    text-decoration: none;
+}
+
+</style>
+
+
+
+<script>
+function pesquisar(event) {
+    event.preventDefault();
+
+    let input = document.getElementById("barraPesquisa").value.toLowerCase().trim();
+
+    /* 🔀 REDIRECIONA APENAS PARA CORTES */
+    if (
+        input.includes("marcas") ||
+        input.includes("tipos de cabelo") ||
+        input.includes("influenciadores") ||
+        input.includes("importancia")
+    ) {
+        window.location.href = "curly hair senac.html";
+        return false;
+    }
+
+    /* 🔎 FILTRO NORMAL */
+    let produtos = document.querySelectorAll(".produto");
+    let encontrou = false;
+
+    produtos.forEach(function(produto) {
+        let texto = produto.innerText.toLowerCase();
+
+        if (texto.includes(input)) {
+            produto.style.display = "block";
+            encontrou = true;
+        } else {
+            produto.style.display = "none";
+        }
+    });
+
+    if (!encontrou) {
+        alert("Nenhum resultado encontrado.");
+    }
+
+    return false;
+}
+</script>
+</head>
+
+
+
+<body>
+<!-- cabeçalho -->
+<nav class="menu">
+    <div class="menu-container">
+
+        <!-- LOGO com link para página principal -->
+        <a href="curly hair senac.html" class="logo-link">
+            <div class="logo">𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓</div>
+        </a>
+
+      
+        
+        <!-- BARRA DE PESQUISA -->
+        <form onsubmit="return pesquisar(event)" class="search-form">
+            <input type="text" id="barraPesquisa" placeholder="Pesquisar...">
+        </form>
+
+    </div>
+</nav>
+
+
+
+<!--imagem de inicio-->
+<img src="WhatsApp Image 2026-02-23 at 22.08.12.jpeg" width="1900" height="520">
+
+
+<!-- CONTEÚDO -->
+<div class="conteudo">
+
+<h1 style="text-align: center;"> Recomendação de cortes</h1>
+
+
+<details>
+<summary> 2A, 2B, 2C</summary>
+
+<img src="https://i.pinimg.com/originals/3f/7c/fd/3f7cfd8423dbb6e135e861cf7c873079.jpg" width="450" height="300">
+<p>
+O cabelo ondulado combina com vários estilos de corte, principalmente aqueles que valorizam o movimento natural dos fios. 
+Um dos mais populares é o Curly Crop, que mantém as laterais mais curtas e o topo com volume, deixando o visual moderno e
+ fácil de cuidar. Outro corte muito usado é o Shag, que tem camadas que dão mais textura e leveza ao cabelo. Já o Undercut 
+ ondulado cria contraste entre as laterais curtas e o topo mais longo, destacando as ondas e deixando o estilo mais marcante.
+  Esses cortes ajudam a definir melhor o formato do cabelo e facilitam a finalização no dia a dia. ✂️
+</p>
+
+</details>
+
+
+<details>
+<summary> 3A, 3B, 3C </summary>
+
+<img src="https://i.pinimg.com/originals/f6/95/25/f69525c6aa0a1d13bb546f0724dae2ed.png" width="450" height="300">
+<p>
+O cabelo cacheado fica melhor com cortes que valorizam o volume natural e a definição dos cachos.
+ Um dos mais usados é o Curly Crop, que deixa as laterais mais curtas e o topo com bastante textura.
+  Outro corte muito popular é o Degradê Cacheado, que cria uma transição suave nas laterais e mantém
+   o volume em cima. Já o Corte em Camadas ajuda a distribuir melhor o volume do cabelo, deixando os 
+   cachos mais leves, definidos e com movimento. Esses cortes ajudam o cabelo a ficar mais bonito e 
+   fácil de cuidar no dia a dia. ✂️
+</p>
+</details>
+
+<details>
+<summary> 4A, 4B, 4C </summary>
+
+<img src="https://www.belezasimples.com.br/wp-content/uploads/2019/01/TIPOS_DE_CACHOS_tipo4.png" width="450" height="300">
+<p>
+O cabelo crespo fica muito bonito com cortes que valorizam o volume e a forma natural dos fios. 
+Um dos estilos mais usados é o Black Power, que mantém o cabelo cheio e bem volumoso, destacando 
+a textura natural. Outro corte popular é o Degradê com topo crespo, que deixa as laterais mais baixas
+ enquanto o topo continua alto e definido. Também existe o Taper Fade, que mantém volume na parte de
+  cima e atrás, mas com laterais mais limpas, criando um visual moderno e estiloso. Esses cortes ajudam 
+  a realçar a identidade do cabelo crespo e facilitam a manutenção. ✂️
+</p>
+
+
+</details>
+</div>
+
+<!--comercial-->
+ <p style="margin: 15px; padding: 30px;"></p><a href="https://www.salonline.com.br/outlet"> <img src="https://cosmeticinnovation.com.br/wp-content/uploads/2021/01/salon_line.jpg" width="1900" height="400"> </a>
+
+
+<!--teste rapido-->
+<p style="margin: 40px; padding: 60px;"></p>
+<h1 style="color: rgb(255, 112, 207);font-size: 35px;"> <h1 style="text-align: center;"> Descobrindo seu tipo de cabelo </h1> </h1> 
+
+ <p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://i.pinimg.com/originals/69/23/c1/6923c16577904ad407370fb3af5f7ff9.jpg" 
+    width="250" height="250" align="left">
+<h2>ㅤㅤEntender qual é o seu tipo de cabelo é um passo importante para cuidar melhor dos fios e escolher cortes e produtos que realmente
+     funcionem. Cada cabelo possui características próprias, como formato, volume, espessura e nível de hidratação. Por exemplo, 
+     cabelos ondulados, cacheados e crespos têm necessidades diferentes e reagem de maneiras distintas a cortes, finalizações e 
+     produtos. Quando você conhece bem o seu tipo de fio, fica muito mais fácil manter o cabelo saudável, bonito e com uma boa definição.
+Uma forma simples de descobrir isso é através do Teste rápido para descobrir o tipo de cabelo ideal disponível no site da L’Oréal.
+ Nesse teste, você responde algumas perguntas sobre como é o seu cabelo naturalmente, como ele reage à umidade, ao volume e à
+  definição dos fios. A partir das respostas, o site apresenta uma indicação do tipo de cabelo e também pode sugerir cuidados, 
+  rotinas e produtos mais adequados. Esse tipo de ferramenta é útil principalmente para quem ainda não sabe exatamente qual é
+   a curvatura do próprio cabelo. Ao entender melhor suas características naturais, fica mais fácil escolher cortes que valorizem
+    o formato dos fios e criar uma rotina de cuidados mais eficiente. Assim, o cabelo pode ficar mais saudável, definido e com uma 
+    aparência que combina melhor com cada pessoa. ✨</h2> 
+
+                        <a href="https://www.loreal-paris.com.br/teste-qual-o-seu-tipo-de-cabelo-responda-as-perguntas-e-descubra" target="_blank"> <div style="background-color: rgb(255, 241, 254);color: rgb(255, 0, 140); padding: 15px;width: 1800px; text-align: center;">
+  saiba mais </a>
+</div> </div>
+
+<!--comercial-->
+<p style="margin: 15px; padding: 100px;"></p> <a href="https://www.salonline.com.br/"> <img src="comercial 2.jpg" width="1900" height="500"> </a>
+
+
+<p style="margin: 40px; padding: 60px;"></p>
+<h1 style="color: rgb(255, 112, 207);font-size: 35px;"> <h1 style="text-align: center;"> Cortes populares </h1> </h1> 
+
+
+<p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://shorthairstyles.com/wp-content/uploads/2024/02/117973941_340082460457486_5979710176007189164_n-1024x1024.jpg" 
+width="250" height="250" align="left">
+<h1> Curly Crop</h1>
+<h2>O Curly Crop é um corte de cabelo masculino ideal para quem tem cabelo cacheado ou ondulado.
+     Nesse estilo, o topo do cabelo fica um pouco mais longo para destacar os cachos naturais, enquanto
+      as laterais e a parte de trás são cortadas mais curtas, muitas vezes em degradê. A franja geralmente
+       é mantida curta ou levemente bagunçada, dando um visual moderno e estiloso.
+Esse corte valoriza o volume e a textura natural do cabelo, deixando os cachos mais definidos. Além disso, 
+é um estilo prático para o dia a dia, pois não exige muita finalização. Com apenas um creme ou ativador de c
+achos já é possível manter o cabelo bonito e arrumado.✂️
+</h2> 
+</div>
+
+
+
+<p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ51myHjQ7g3OezT9aOcc3NR05ae1MXX8PuHg&s" 
+width="250" height="250" align="left">
+<h1> Wolf cut </h1>
+<h2>O Wolf Cut cacheado é um corte moderno e cheio de personalidade que mistura características do Shag haircut
+     com o Mullet haircut. Ele ficou muito popular nos últimos anos, principalmente nas redes sociais, porque cria
+  um visual mais natural, volumoso e um pouco “desarrumado”, que combina muito bem com a textura dos cabelos cacheados.
+        Nesse corte, o cabelo é trabalhado em várias camadas, com bastante volume na parte de cima da cabeça e nas laterais,
+     enquanto a parte de trás costuma ficar um pouco mais longa. Essas camadas ajudam os cachos a ficarem mais definidos
+             e leves, evitando que o cabelo fique pesado ou sem movimento. ✂️
+</h2> 
+</div>
+
+
+
+
+<p style="margin: 15px; padding: 20px;"></p>
+<div class="produto"> 
+<img src="https://enfisa.com.br/wp-content/uploads/2023/02/cacheado-em-camadas.jpeg" 
+width="250" height="250" align="left">
+<h1> Corte em camadas</h1>
+<h2>O corte em camadas para cabelo cacheado é um estilo em que o cabelo é cortado em diferentes comprimentos, 
+    formando várias “camadas” ao longo da cabeça. Em vez de todo o cabelo ficar do mesmo tamanho, algumas partes
+     ficam mais curtas e outras mais longas. Isso ajuda a distribuir melhor o volume e faz com que os cachos tenham 
+     mais movimento e leveza. Em cabelos cacheados, esse tipo de corte é muito valorizado porque evita que o cabelo 
+     fique pesado ou com formato muito triangular, algo que pode acontecer quando todos os fios têm o mesmo comprimento.
+As camadas também ajudam a definir melhor os cachos, já que cada parte do cabelo consegue se formar de maneira mais
+ natural. ✂️
+</h2> 
+</div>
+
+<!-- FOOTER -->
+ <p style="margin: 40px; padding: 10px;"></p>
+<footer class="footer">
+  <div class="container footer-container">
+
+    <div class="footer-col">
+      <h2 class="footer-logo">𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓</h2>
+      <h3>Cuidando de você desde sempre.</h3>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Assine nossa newsletter</h3>
+      <p>Receba novidades exclusivas diretamente no seu e-mail.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Digite seu e-mail" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <div class="footer-col">
+      <h3>Siga o 𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓</h3>
+      <div class="footer-social">
+  <a href="https://www.instagram.com/curlyhairsenac/" target="_blank"><img src="https://www.freepnglogos.com/uploads/instagram-logo-png/white-instagram-logo-black-and-white-icon--14.png" alt="Instagram"></a>
+  <a href="https://www.facebook.com" target="_blank"><img src="https://tse3.mm.bing.net/th/id/OIP.MuwDvybtb_PqVOGREGIjegHaHb?w=482&h=484&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Facebook"></a>
+  <a href="https://twitter.com" target="_blank"><img src="https://tse4.mm.bing.net/th/id/OIP._j_CS9V2HOZOf4P9vqD4GgHaHa?w=500&h=500&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Twitter"></a>
+</div>
+    </div>
+
+  </div>
+
+  <div class="footer-copy">
+    <p>© 2026 𝑪𝒖𝒓𝒍𝒚 𝑯𝒂𝒊𝒓. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
